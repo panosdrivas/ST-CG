@@ -29,6 +29,35 @@
   b1(n-1)=-1;
   b1(n)=3;
   
+    %{
+    linaer system A2X2 =B2
+   A2=zeros(n,n);
+   for i=1:n
+     for j=1:n
+       if (i==j)
+         A2(i,j)=7;
+       elseif (i==j+1 || j==i+1)
+          A2(i,j)=-4;
+       elseif (i==j+2 || j==i+2)
+           A2(i,j)=1;
+       end
+     end
+   end
+   
+  b2=zeros(n,1);
+
+  b2(1)=4;
+  b2(2)=0;
+  b2(3)=1;
+  for i=4:n-3
+   b2(i)=1;
+  end
+  b2(n-2)=1;
+  b2(n-1)=0;
+  b2(n)=4;
+    
+    %}
+  
   x=zeros(n,1);
   r=b1;
   k=0;
